@@ -1,0 +1,121 @@
+{
+  "offset": 0,
+  "limit": 2,
+  "total": 236,
+  "_links": {
+    "self": {
+      "href": "/api/brands?limit=2"
+    },
+    "first": {
+      "href": "/api/brands?limit=2"
+    },
+    "last": {
+      "href": "/api/brands?limit=2&offset=234"
+    },
+    "next": {
+      "href": "/api/brands?limit=2&offset=2"
+    }
+  },
+  "_embedded": {
+    "items": [
+      {
+        "profile": "brand",
+        "id": "bacd64dc-f58a-4b20-a26b-d80bb1d57f7f",
+        "totalVideos": 1,
+        "viewCount": 2374,
+        "title": "#SayHi - Die Aktion für Freundschaft",
+        "description": "#SayHi ist eine Mitmach-Aktion, die sich für Freundschaft einsetzt und stark macht gegen Mobbing. International setzen wir gemeinsam tanzend ein Zeichen! Luca Hänni singt den SayHi-Song 2022 \"Ich bin da für dich\" für KiKA.",
+        "modificationDate": "2023-01-23T09:47:33+01:00",
+        "synonyms": "sayhi,tanz aktion,aktion für freundschaft,tanz gegen mobbing,aktion gegen mobbing,mitmach-aktion tanzen,luca hänni,ben blümel,feuerwerk,ich bin da für dich luca hänni",
+        "teaserImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-tlarge169_w-448.jpg?version=46981",
+        "backgroundImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-108-resimage_v-opener489_w-1280.jpg?version=43649",
+        "logoImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-106-resimage_v-tlarge169_w-256.png?version=46924",
+        "identImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-ident_w-192.jpg?version=46981",
+        "brandImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-searchImage_w-256.jpg?version=46981",
+        "largeTeaserImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-tlarge169_w-1280.jpg?version=46981",
+        "largeBackgroundImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-108-resimage_v-tlarge169_w-1600.jpg?version=43649",
+        "largeLogoImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-106-resimage_v-tlarge169_w-960.png?version=46924",
+        "largeIdentImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-ident_w-832.jpg?version=46981",
+        "largeBrandImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-searchImage.jpg?version=46981",
+        "mediumTeaserImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-tlarge169_w-960.jpg?version=46981",
+        "mediumBackgroundImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-108-resimage_v-tlarge169_w-1280.jpg?version=43649",
+        "mediumLogoImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-106-resimage_v-tlarge169_w-640.png?version=46924",
+        "mediumIdentImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-ident_w-512.jpg?version=46981",
+        "mediumBrandImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-searchImage_w-640.jpg?version=46981",
+        "smallTeaserImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-tlarge169_w-640.jpg?version=46981",
+        "smallBackgroundImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-108-resimage_v-tlarge169_w-960.jpg?version=43649",
+        "smallLogoImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-106-resimage_v-tlarge169_w-320.png?version=46924",
+        "smallIdentImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-ident_w-320.jpg?version=46981",
+        "smallBrandImageUrl": "https://www.kika.de/say-hi/bilder/say-hi-teaser-100-resimage_v-searchImage_w-384.jpg?version=46981",
+        "homepageTeaserLinkText": null,
+        "homepageTeaserLinkUrl": null,
+        "targetGroup": 8,
+        "geoProtection": null,
+        "isVisibleInSearch": true,
+        "boostedInSearch": false,
+        "sortEpisodesBy": null,
+        "_links": {
+          "self": {
+            "href": "/api/brands/bacd64dc-f58a-4b20-a26b-d80bb1d57f7f"
+          },
+          "videos": {
+            "href": "/api/brands/bacd64dc-f58a-4b20-a26b-d80bb1d57f7f/videos"
+          }
+        }
+      },
+      {
+        "profile": "brand",
+        "id": "48b43cef-5ea1-40b8-9486-702b8680a6aa",
+        "totalVideos": 9,
+        "viewCount": 4462,
+        "title": "1, 2 oder 3",
+        "description": "Träumst du auch von einem Ausflug ins All? Oder wolltest du schon immer mal etwas total Verrücktes erfinden? Dann bist du bei 1, 2 oder 3 genau richtig. Denn diese und noch viele andere spannende Themen werden von Elton und seinem Freund Piet Flosse jede Woche aufs Neue erkundet. Bei 1, 2 oder 3 kannst du zusammen mit den Kandidaten im Studio dein Wissen testen.",
+        "modificationDate": "2023-02-07T17:03:38+01:00",
+        "synonyms": "elton,piet,quiz,wissen,show,eins zwei oder drei",
+        "teaserImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-tlarge169_w-448.jpg?version=56508",
+        "backgroundImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-backgroundimage-100-resimage_v-opener489_w-1280.jpg?version=09424",
+        "homepageTeaserImageUrl": "https://www.kika.de/applikationen/kika-player/settings/zdf-homepageteaser-100-resimage_v-tlarge169_w-448.jpg?version=56409",
+        "logoImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-logo-100-resimage_v-tlarge169_w-256.png?version=08536",
+        "figureImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-channelheader-100-resimage_v-headerLarge_w-960.png?version=09687",
+        "identImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-ident_w-192.jpg?version=56508",
+        "brandImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-searchImage_w-256.jpg?version=56508",
+        "largeTeaserImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-tlarge169_w-1280.jpg?version=56508",
+        "largeBackgroundImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-backgroundimage-100-resimage_v-tlarge169_w-1600.jpg?version=09424",
+        "largeHomepageTeaserImageUrl": "https://www.kika.de/applikationen/kika-player/settings/zdf-homepageteaser-100-resimage_v-tlarge169_w-1280.jpg?version=56409",
+        "largeLogoImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-logo-100-resimage_v-tlarge169_w-960.png?version=08536",
+        "largeFigureImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-channelheader-100-resimage_v-headerLarge_w-1472.png?version=09687",
+        "largeIdentImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-ident_w-832.jpg?version=56508",
+        "largeBrandImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-searchImage.jpg?version=56508",
+        "mediumTeaserImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-tlarge169_w-960.jpg?version=56508",
+        "mediumBackgroundImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-backgroundimage-100-resimage_v-tlarge169_w-1280.jpg?version=09424",
+        "mediumHomepageTeaserImageUrl": "https://www.kika.de/applikationen/kika-player/settings/zdf-homepageteaser-100-resimage_v-tlarge169_w-960.jpg?version=56409",
+        "mediumLogoImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-logo-100-resimage_v-tlarge169_w-640.png?version=08536",
+        "mediumFigureImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-channelheader-100-resimage_v-headerLarge_w-1408.png?version=09687",
+        "mediumIdentImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-ident_w-512.jpg?version=56508",
+        "mediumBrandImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-searchImage_w-640.jpg?version=56508",
+        "smallTeaserImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-tlarge169_w-640.jpg?version=56508",
+        "smallBackgroundImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-backgroundimage-100-resimage_v-tlarge169_w-960.jpg?version=09424",
+        "smallHomepageTeaserImageUrl": "https://www.kika.de/applikationen/kika-player/settings/zdf-homepageteaser-100-resimage_v-tlarge169_w-640.jpg?version=56409",
+        "smallLogoImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-logo-100-resimage_v-tlarge169_w-320.png?version=08536",
+        "smallFigureImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-channelheader-100-resimage_v-headerLarge_w-1344.png?version=09687",
+        "smallIdentImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-ident_w-320.jpg?version=56508",
+        "smallBrandImageUrl": "https://www.kika.de/1-2-oder-3/sendungen/bilder/eins-zwei-oder-drei-teaserimage-100-resimage_v-searchImage_w-384.jpg?version=56508",
+        "homepageTeaserLinkText": "Mehr bei ZDFtivi.de",
+        "homepageTeaserLinkUrl": "https://www.zdf.de/kinder/1-2-oder-3",
+        "targetGroup": 7,
+        "geoProtection": null,
+        "isVisibleInSearch": true,
+        "boostedInSearch": false,
+        "sortEpisodesBy": "sortByDateNewestFirst",
+        "_links": {
+          "self": {
+            "href": "/api/brands/48b43cef-5ea1-40b8-9486-702b8680a6aa"
+          },
+          "videos": {
+            "href": "/api/brands/48b43cef-5ea1-40b8-9486-702b8680a6aa/videos"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "offset": 0,
+  "limit": 2,
+  "total": 8034,
+  "_links": {
+    "self": {
+      "href": "/api/videos?limit=2"
+    },
+    "first": {
+      "href": "/api/videos?limit=2"
+    },
+    "last": {
+      "href": "/api/videos?limit=2&offset=8032"
+    },
+    "next": {
+      "href": "/api/videos?limit=2&offset=2"
+    }
+  },
+  "_embedded": {
+    "items": [
+      {
+        "profile": "video",
+        "id": "09dff8e4-0758-4b5b-abd5-4b44740ac8ef",
+        "title": "... auf dem Land",
+        "description": "Celia liebt das Leben auf dem Dorf, obwohl der nächste Supermarkt oder Eisdiele weit weg sind? Was ist das Besondere an einem Dorf?",
+        "modificationDate": "2023-03-06T10:10:00+01:00",
+        "teaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240520-resimage_v-tlarge169_w-448.jpg?version=04103",
+        "smallTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240520-resimage_v-tlarge169_w-640.jpg?version=04103",
+        "mediumTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240520-resimage_v-tlarge169_w-960.jpg?version=04103",
+        "largeTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240520-resimage_v-tlarge169_w-1280.jpg?version=04103",
+        "extraLargeTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240520-resimage_v-tlarge169_w-1280.jpg?version=04103",
+        "broadcaster": "KiKA",
+        "sophoraId": "celias-welt-108",
+        "appearDate": "2021-10-25T17:41:00+02:00",
+        "expirationDate": "2023-10-15T23:59:00+02:00",
+        "isDownloadable": false,
+        "duration": 428,
+        "seasonNumber": 1,
+        "seasonTitle": null,
+        "episodeNumber": 5,
+        "viewCount": 41,
+        "targetGroup": 8,
+        "geoProtection": "worldwide",
+        "subtitle": true,
+        "videoType": "mainContent",
+        "otherVideoTypes": [],
+        "_links": {
+          "self": {
+            "href": "/api/videos/09dff8e4-0758-4b5b-abd5-4b44740ac8ef"
+          },
+          "assets": {
+            "href": "/api/videos/09dff8e4-0758-4b5b-abd5-4b44740ac8ef/assets"
+          },
+          "player-assets": {
+            "href": "/api/videos/09dff8e4-0758-4b5b-abd5-4b44740ac8ef/player-assets"
+          },
+          "count-view": {
+            "href": "/api/videos/09dff8e4-0758-4b5b-abd5-4b44740ac8ef/count-view"
+          },
+          "brand": {
+            "href": "/api/brands/3f6f3e9d-4f1b-420b-b223-46b5d09273d7"
+          }
+        },
+        "_embedded": {
+          "brand": {
+            "profile": "brand",
+            "id": "3f6f3e9d-4f1b-420b-b223-46b5d09273d7",
+            "totalVideos": 9,
+            "viewCount": 767,
+            "title": "Celias Welt ",
+            "description": "Celias Welt ist die Welt der Kinder. Celia ist elf Jahre alt, lebt in einem Dorf in Niedersachsen, ist neugierig, wissbegierig und manchmal auch ein bisschen frech. Celia begibt sich auf Spurensuche, stellt Fragen und entdeckt Dinge. Sie will zum Beispiel wissen: Was ist der Unterschied zwischen Leben in der Stadt und Leben auf dem Dorf? oder Woher kommt die Demokratie und was bedeutet das eigentlich in einer Demokratie zu leben?",
+            "modificationDate": "2022-11-29T01:29:13+01:00",
+            "synonyms": "",
+            "teaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-448.jpg?version=09559",
+            "backgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-opener489_w-1280.jpg?version=05903",
+            "logoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-256.png?version=23966",
+            "figureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-960.png?version=05786",
+            "identImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-192.jpg?version=09559",
+            "brandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage_w-256.jpg?version=09559",
+            "largeTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-1280.jpg?version=09559",
+            "largeBackgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-tlarge169_w-1600.jpg?version=05903",
+            "largeLogoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-960.png?version=23966",
+            "largeFigureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-1472.png?version=05786",
+            "largeIdentImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-832.jpg?version=09559",
+            "largeBrandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage.jpg?version=09559",
+            "mediumTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-960.jpg?version=09559",
+            "mediumBackgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-tlarge169_w-1280.jpg?version=05903",
+            "mediumLogoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-640.png?version=23966",
+            "mediumFigureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-1408.png?version=05786",
+            "mediumIdentImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-512.jpg?version=09559",
+            "mediumBrandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage_w-640.jpg?version=09559",
+            "smallTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-640.jpg?version=09559",
+            "smallBackgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-tlarge169_w-960.jpg?version=05903",
+            "smallLogoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-320.png?version=23966",
+            "smallFigureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-1344.png?version=05786",
+            "smallIdentImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-320.jpg?version=09559",
+            "smallBrandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage_w-384.jpg?version=09559",
+            "homepageTeaserLinkText": null,
+            "homepageTeaserLinkUrl": null,
+            "targetGroup": 8,
+            "geoProtection": null,
+            "isVisibleInSearch": true,
+            "boostedInSearch": false,
+            "sortEpisodesBy": "sortByEpisodeNumberOldestFirst",
+            "_links": {
+              "self": {
+                "href": "/api/brands/3f6f3e9d-4f1b-420b-b223-46b5d09273d7"
+              },
+              "videos": {
+                "href": "/api/brands/3f6f3e9d-4f1b-420b-b223-46b5d09273d7/videos"
+              }
+            }
+          }
+        }
+      },
+      {
+        "profile": "video",
+        "id": "a3c5c6dd-3179-41d5-b3bc-b2cafe2ec264",
+        "title": "... in der Stadt",
+        "description": "In Deutschland leben die meisten Menschen in Städten. Sie wohnen in Mehrfamilienhäusern und manche teilen sich einen Garten.",
+        "modificationDate": "2023-03-06T10:10:00+01:00",
+        "teaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240518-resimage_v-tlarge169_w-448.jpg?version=44353",
+        "smallTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240518-resimage_v-tlarge169_w-640.jpg?version=44353",
+        "mediumTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240518-resimage_v-tlarge169_w-960.jpg?version=44353",
+        "largeTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240518-resimage_v-tlarge169_w-1280.jpg?version=44353",
+        "extraLargeTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/bild240518-resimage_v-tlarge169_w-1280.jpg?version=44353",
+        "broadcaster": "KiKA",
+        "sophoraId": "celias-welt-110",
+        "appearDate": "2021-10-25T17:42:00+02:00",
+        "expirationDate": "2023-10-15T23:59:00+02:00",
+        "isDownloadable": false,
+        "duration": 440,
+        "seasonNumber": 1,
+        "seasonTitle": null,
+        "episodeNumber": 4,
+        "viewCount": 48,
+        "targetGroup": 8,
+        "geoProtection": "worldwide",
+        "subtitle": true,
+        "videoType": "mainContent",
+        "otherVideoTypes": [],
+        "_links": {
+          "self": {
+            "href": "/api/videos/a3c5c6dd-3179-41d5-b3bc-b2cafe2ec264"
+          },
+          "assets": {
+            "href": "/api/videos/a3c5c6dd-3179-41d5-b3bc-b2cafe2ec264/assets"
+          },
+          "player-assets": {
+            "href": "/api/videos/a3c5c6dd-3179-41d5-b3bc-b2cafe2ec264/player-assets"
+          },
+          "count-view": {
+            "href": "/api/videos/a3c5c6dd-3179-41d5-b3bc-b2cafe2ec264/count-view"
+          },
+          "brand": {
+            "href": "/api/brands/3f6f3e9d-4f1b-420b-b223-46b5d09273d7"
+          }
+        },
+        "_embedded": {
+          "brand": {
+            "profile": "brand",
+            "id": "3f6f3e9d-4f1b-420b-b223-46b5d09273d7",
+            "totalVideos": 9,
+            "viewCount": 767,
+            "title": "Celias Welt ",
+            "description": "Celias Welt ist die Welt der Kinder. Celia ist elf Jahre alt, lebt in einem Dorf in Niedersachsen, ist neugierig, wissbegierig und manchmal auch ein bisschen frech. Celia begibt sich auf Spurensuche, stellt Fragen und entdeckt Dinge. Sie will zum Beispiel wissen: Was ist der Unterschied zwischen Leben in der Stadt und Leben auf dem Dorf? oder Woher kommt die Demokratie und was bedeutet das eigentlich in einer Demokratie zu leben?",
+            "modificationDate": "2022-11-29T01:29:13+01:00",
+            "synonyms": "",
+            "teaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-448.jpg?version=09559",
+            "backgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-opener489_w-1280.jpg?version=05903",
+            "logoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-256.png?version=23966",
+            "figureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-960.png?version=05786",
+            "identImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-192.jpg?version=09559",
+            "brandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage_w-256.jpg?version=09559",
+            "largeTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-1280.jpg?version=09559",
+            "largeBackgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-tlarge169_w-1600.jpg?version=05903",
+            "largeLogoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-960.png?version=23966",
+            "largeFigureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-1472.png?version=05786",
+            "largeIdentImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-832.jpg?version=09559",
+            "largeBrandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage.jpg?version=09559",
+            "mediumTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-960.jpg?version=09559",
+            "mediumBackgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-tlarge169_w-1280.jpg?version=05903",
+            "mediumLogoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-640.png?version=23966",
+            "mediumFigureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-1408.png?version=05786",
+            "mediumIdentImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-512.jpg?version=09559",
+            "mediumBrandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage_w-640.jpg?version=09559",
+            "smallTeaserImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-tlarge169_w-640.jpg?version=09559",
+            "smallBackgroundImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-background-100-resimage_v-tlarge169_w-960.jpg?version=05903",
+            "smallLogoImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-logo-100-resimage_v-tlarge169_w-320.png?version=23966",
+            "smallFigureImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-header-100-resimage_v-headerLarge_w-1344.png?version=05786",
+            "smallIdentImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-ident_w-320.jpg?version=09559",
+            "smallBrandImageUrl": "https://www.kika.de/celias-welt/sendungen/bilder/celias-welt-teaser-100-resimage_v-searchImage_w-384.jpg?version=09559",
+            "homepageTeaserLinkText": null,
+            "homepageTeaserLinkUrl": null,
+            "targetGroup": 8,
+            "geoProtection": null,
+            "isVisibleInSearch": true,
+            "boostedInSearch": false,
+            "sortEpisodesBy": "sortByEpisodeNumberOldestFirst",
+            "_links": {
+              "self": {
+                "href": "/api/brands/3f6f3e9d-4f1b-420b-b223-46b5d09273d7"
+              },
+              "videos": {
+                "href": "/api/brands/3f6f3e9d-4f1b-420b-b223-46b5d09273d7/videos"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
