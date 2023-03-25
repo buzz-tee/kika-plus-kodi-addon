@@ -22,20 +22,20 @@ from .common import *
 
 
 def mainMenu():
-	if Newest: addDir(translation(30601), icon, {'mode': 'listEpisodes', 'url': BASE_API+'/api/videos?offset=0&limit=100&orderBy=appearDate&orderDirection=desc'})
-	if Mostviewed: addDir(translation(30602), icon, {'mode': 'listEpisodes', 'url': BASE_API+'/api/videos?offset=0&limit=100&orderBy=viewCount&orderDirection=desc'})
-	if Lastchance: addDir(translation(30603), icon, {'mode': 'listEpisodes', 'url': BASE_API+'/api/videos?offset=0&limit=100&orderBy=expirationDate&orderDirection=asc'})
+	if Newest: addDir(translation(30601), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=appearDate&orderDirection=desc', 'extras': json.dumps({'pager': False})})
+	if Mostviewed: addDir(translation(30602), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=viewCount&orderDirection=desc', 'extras': json.dumps({'pager': False})})
+	if Lastchance: addDir(translation(30603), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=expirationDate&orderDirection=asc', 'extras': json.dumps({'pager': False})})
 	if kikaninchen: 
-		addDir(translation(30604), icon, {'mode': 'listEpisodes', 'url': BASE_API+'/api/brands/ebb32e6f-511f-450d-9519-5cbf50d4b546/videos', 'extras': 'excluded'})
-		addDir(translation(30605), icon, {'mode': 'listEpisodes', 'url': BASE_API+'/api/brands/9ed5cf37-2e09-4074-9935-f51ae06e45b1/videos', 'transmit': 'Kikaninchen und Freunde'})
-	if sesamstrasse: addDir(translation(30606), icon, {'mode': 'listEpisodes', 'url': BASE_API+'/api/brands/3e3e70b3-62a2-40cb-856d-a46d3e210e9c/videos', 'transmit': 'Sesamstrasse'})
+		addDir(translation(30604), icon, {'mode': 'listEpisodes', 'url': '/api/brands/ebb32e6f-511f-450d-9519-5cbf50d4b546/videos'})
+		addDir(translation(30605), icon, {'mode': 'listEpisodes', 'url': '/api/brands/9ed5cf37-2e09-4074-9935-f51ae06e45b1/videos', 'transmit': 'Kikaninchen und Freunde'})
+	if sesamstrasse: addDir(translation(30606), icon, {'mode': 'listEpisodes', 'url': '/api/brands/3e3e70b3-62a2-40cb-856d-a46d3e210e9c/videos', 'transmit': 'Sesamstrasse'})
 	if since03: addDir(translation(30607), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc', 'extras': json.dumps({'since': 3})})
 	if since06: addDir(translation(30608), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc', 'extras': json.dumps({'since': 6})})
 	if since10: addDir(translation(30609), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc', 'extras': json.dumps({'since': 10})})
 	if sinceAll: addDir(translation(30610), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc'})
 	if Userspecial:
-		addDir(translation(30611), icon, {'mode': 'listAlphabet', 'url': BASE_URL+'/videos/videos-dgs-100.html', 'extras': 'excluded'})
-		addDir(translation(30612), icon, {'mode': 'listAlphabet', 'url': BASE_URL+'/videos/videos-ad-100.html', 'extras': 'excluded'})
+		addDir(translation(30611), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&videoTypes=dgsContent'})
+		addDir(translation(30612), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&videoTypes=adContent'})
 	addDir(translation(30613), artpic+'livestream.png', {'mode': 'playLIVE', 'url': BASE_LIVE}, folder=False)
 	if enableADJUSTMENT:
 		addDir(translation(30614), artpic+'settings.png', {'mode': 'aConfigs'}, folder=False)
@@ -58,7 +58,7 @@ def listAlphabet(url, EXTRA):
 		for item in content['_embedded']['items']:
 			if target_group > 0 and target_group < item['targetGroup']:
 				continue
-			addDir(item['title'], item['brandImageUrl'], params={'mode': 'listEpisodes', 'url': BASE_API + item['_links']['videos']['href']},
+			addDir(item['title'], item['brandImageUrl'], params={'mode': 'listEpisodes', 'url': item['_links']['videos']['href']},
 				fanart=item['largeBackgroundImageUrl'])
 	xbmcplugin.endOfDirectory(ADDON_HANDLE)
 	if forceView:
@@ -70,42 +70,50 @@ def listEpisodes(url, EXTRA, TRANS):
 	COMBI_EPISODE, COMBI_THIRD, COMBI_FOURTH = ([] for _ in range(3))
 	SingleENTRY = set()
 	pos1 = 0
-	log(f"EPISODE {url}")
-	DATA = getUrl(url)
-	for item in DATA['_embedded']['items']:
-		debug_MS("(navigator.listEpisodes[1]) no.01 ### ITEM-01 : {0} ###".format(str(item)))
-		SERIE_1, VIEWS, startTIMES, endTIMES, STUDIO_1 = (None for _ in range(5))
-		DESC_1, canPLAY_1 = "", True
-		TITLE_1 = cleaning(item['title'])
-		if item.get('_embedded', '') and item.get('_embedded', {}).get('brand', '') and item.get('_embedded', []).get('brand', {}).get('title', ''):
-			TITLE_1, SERIE_1 = cleaning(item['_embedded']['brand']['title']) + ' - ' + TITLE_1, cleaning(item['_embedded']['brand']['title'])
-		JSURL_1 = '{0}/api/videos/{1}/player-assets'.format(BASE_API, str(item['id']))
-		THUMB_1 = (item.get('largeTeaserImageUrl', '') or icon)
-		VIEWS = (item.get('viewCount', None) or None)
-		SEAS_1 = (item.get('seasonNumber', 0) or 0)
-		EPIS_1 = (item.get('episodeNumber', 0) or 0)
-		TAGLINE_2 = translation(30622).format(str(SEAS_1).zfill(2), str(EPIS_1).zfill(2)) if SEAS_1 != 0 and EPIS_1 != 0 else translation(30623).format(str(EPIS_1).zfill(2)) if SEAS_1 == 0 and EPIS_1 != 0 else None
-		if SERIE_1 and VIEWS: DESC_1 += translation(30624).format(str(SERIE_1), str(VIEWS))
-		elif SERIE_1 and VIEWS is None: DESC_1 += translation(30625).format(str(SERIE_1))
-		if str(item.get('appearDate'))[:4].isdigit(): # 2020-05-08T07:45:00+02:00
-			try:
-				startDates = datetime(*(time.strptime(item['appearDate'][:19], '%Y{0}%m{0}%dT%H{1}%M{1}%S'.format('-', ':'))[0:6])) # 2022-03-28T19:50:00+02:00
-				startTIMES = startDates.strftime('%d{0}%m{0}%y {1} %H{2}%M').format('.', '•', ':')
-			except: pass
-		if str(item.get('expirationDate'))[:4].isdigit(): # 2020-05-08T07:45:00+02:00
-			try:
-				endDates = datetime(*(time.strptime(item['expirationDate'][:19], '%Y{0}%m{0}%dT%H{1}%M{1}%S'.format('-', ':'))[0:6])) # 2023-03-28T19:50:00+02:00
-				endTIMES = endDates.strftime('%d{0}%m{0}%y {1} %H{2}%M').format('.', '•', ':')
-			except: pass
-		if startTIMES and endTIMES: DESC_1 += translation(30626).format(str(startTIMES), str(endTIMES))
-		elif startTIMES and endTIMES is None: DESC_1 += translation(30627).format(str(startTIMES))
-		if item.get('description', ''): DESC_1 += '[CR]'+cleaning(item['description'])
-		if item.get('broadcaster', ''):
-			DESC_1 += translation(30628).format(cleaning(item['broadcaster'])) if item.get('description', '') else translation(30629).format(cleaning(item['broadcaster']))
-			STUDIO_1 = cleaning(item['broadcaster'])
-		DURATION_1 = (item.get('duration', 0) or 0)
-		pos1 += 1
-		COMBI_EPISODE.append([int(pos1), JSURL_1, STUDIO_1, TITLE_1, SERIE_1, SEAS_1, EPIS_1, THUMB_1, DESC_1, TAGLINE_2, DURATION_1, canPLAY_1])
+	log(f"EPISODE {url} - EXTRA={EXTRA} {type(EXTRA)}")
+
+	extras = json.loads(EXTRA) if EXTRA else {}
+	content = { '_links': { 'next': { 'href': url } } }
+	while 'next' in content['_links']:
+		content = getUrl(BASE_API + content['_links']['next']['href'])
+		for item in content['_embedded']['items']:
+			debug_MS("(navigator.listEpisodes[1]) no.01 ### ITEM-01 : {0} ###".format(str(item)))
+			SERIE_1, VIEWS, startTIMES, endTIMES, STUDIO_1 = (None for _ in range(5))
+			DESC_1, canPLAY_1 = "", True
+			TITLE_1 = cleaning(item['title'])
+			if item.get('_embedded', '') and item.get('_embedded', {}).get('brand', '') and item.get('_embedded', []).get('brand', {}).get('title', ''):
+				TITLE_1, SERIE_1 = cleaning(item['_embedded']['brand']['title']) + ' - ' + TITLE_1, cleaning(item['_embedded']['brand']['title'])
+			if item['videoType'] != 'mainContent' and not Userspecial:
+				continue
+			JSURL_1 = '{0}/api/videos/{1}/player-assets'.format(BASE_API, str(item['id']))
+			THUMB_1 = (item.get('largeTeaserImageUrl', '') or icon)
+			VIEWS = (item.get('viewCount', None) or None)
+			SEAS_1 = (item.get('seasonNumber', 0) or 0)
+			EPIS_1 = (item.get('episodeNumber', 0) or 0)
+			TAGLINE_2 = translation(30622).format(str(SEAS_1).zfill(2), str(EPIS_1).zfill(2)) if SEAS_1 != 0 and EPIS_1 != 0 else translation(30623).format(str(EPIS_1).zfill(2)) if SEAS_1 == 0 and EPIS_1 != 0 else None
+			if SERIE_1 and VIEWS: DESC_1 += translation(30624).format(str(SERIE_1), str(VIEWS))
+			elif SERIE_1 and VIEWS is None: DESC_1 += translation(30625).format(str(SERIE_1))
+			if str(item.get('appearDate'))[:4].isdigit(): # 2020-05-08T07:45:00+02:00
+				try:
+					startDates = datetime(*(time.strptime(item['appearDate'][:19], '%Y{0}%m{0}%dT%H{1}%M{1}%S'.format('-', ':'))[0:6])) # 2022-03-28T19:50:00+02:00
+					startTIMES = startDates.strftime('%d{0}%m{0}%y {1} %H{2}%M').format('.', '•', ':')
+				except: pass
+			if str(item.get('expirationDate'))[:4].isdigit(): # 2020-05-08T07:45:00+02:00
+				try:
+					endDates = datetime(*(time.strptime(item['expirationDate'][:19], '%Y{0}%m{0}%dT%H{1}%M{1}%S'.format('-', ':'))[0:6])) # 2023-03-28T19:50:00+02:00
+					endTIMES = endDates.strftime('%d{0}%m{0}%y {1} %H{2}%M').format('.', '•', ':')
+				except: pass
+			if startTIMES and endTIMES: DESC_1 += translation(30626).format(str(startTIMES), str(endTIMES))
+			elif startTIMES and endTIMES is None: DESC_1 += translation(30627).format(str(startTIMES))
+			if item.get('description', ''): DESC_1 += '[CR]'+cleaning(item['description'])
+			if item.get('broadcaster', ''):
+				DESC_1 += translation(30628).format(cleaning(item['broadcaster'])) if item.get('description', '') else translation(30629).format(cleaning(item['broadcaster']))
+				STUDIO_1 = cleaning(item['broadcaster'])
+			DURATION_1 = (item.get('duration', 0) or 0)
+			pos1 += 1
+			COMBI_EPISODE.append([int(pos1), JSURL_1, STUDIO_1, TITLE_1, SERIE_1, SEAS_1, EPIS_1, THUMB_1, DESC_1, TAGLINE_2, DURATION_1, canPLAY_1])
+		if 'pager' in extras and not extras['pager']:
+			break
 
 	if COMBI_EPISODE or (COMBI_FOURTH and COMBI_THIRD) or (not COMBI_FOURTH and COMBI_THIRD):
 		if COMBI_THIRD:
