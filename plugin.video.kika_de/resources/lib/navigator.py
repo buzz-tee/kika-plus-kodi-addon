@@ -70,8 +70,6 @@ def listEpisodes(url, EXTRA, TRANS):
 	COMBI_EPISODE, COMBI_THIRD, COMBI_FOURTH = ([] for _ in range(3))
 	SingleENTRY = set()
 	pos1 = 0
-	log(f"EPISODE {url} - EXTRA={EXTRA} {type(EXTRA)}")
-
 	extras = json.loads(EXTRA) if EXTRA else {}
 	content = { '_links': { 'next': { 'href': url } } }
 	while 'next' in content['_links']:
