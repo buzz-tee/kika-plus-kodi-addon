@@ -54,8 +54,6 @@ def run():
 		if DONE is True: navigator.mainMenu()
 	elif mode == 'listAlphabet':
 		navigator.listAlphabet(url, extras)
-	elif mode == 'listShows':
-		navigator.listShows(url, extras)
 	elif mode == 'listEpisodes':
 		navigator.listEpisodes(url, extras, transmit)
 	elif mode == 'playVideo':
