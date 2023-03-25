@@ -59,7 +59,7 @@ def listAlphabet(url, EXTRA):
 			if target_group > 0 and target_group < item['targetGroup']:
 				continue
 			addDir(item['title'], item['brandImageUrl'], params={'mode': 'listEpisodes', 'url': item['_links']['videos']['href']},
-				fanart=item['largeBackgroundImageUrl'])
+				plot=item['description'], fanart=item['largeBackgroundImageUrl'])
 	xbmcplugin.endOfDirectory(ADDON_HANDLE)
 	if forceView:
 		xbmc.executebuiltin('Container.SetViewMode('+viewIDAlphabet+')')
