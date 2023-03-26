@@ -78,7 +78,11 @@ msgctxt "#30119"
 msgid "     Show RUBRIK: Sign language and audio movies"
 msgstr ""
 
-# empty strings from id 30120 to 30129
+msgctxt "#30120"
+msgid "     Show RUBRIK: Lollywood"
+msgstr ""
+
+# empty strings from id 30121 to 30129
 
 msgctxt "#30130"
 msgid "     Play HLS-Videos with [COLOR yellow]*Inputstream.Adaptive*[/COLOR]"
@@ -275,7 +279,11 @@ msgctxt "#30615"
 msgid "Inputstream Settings"
 msgstr ""
 
-# empty strings from id 30616 to 30620
+msgctxt "#30616"
+msgid "Lollywood"
+msgstr ""
+
+# empty strings from id 30617 to 30620
 
 msgctxt "#30621"
 msgid "[COLOR chartreuse]* * * [B]COMPLETE-OVERVIEW[/B] * * *[/COLOR]"

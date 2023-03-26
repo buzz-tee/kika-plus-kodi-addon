@@ -28,6 +28,11 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
+				<setting id="lollywood" type="boolean" label="30120" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="since03" type="boolean" label="30115" help="">
 					<level>0</level>
 					<default>true</default>

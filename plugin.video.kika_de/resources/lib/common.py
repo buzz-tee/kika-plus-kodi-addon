@@ -53,6 +53,7 @@ since06                                  = addon.getSetting('since06') == 'true'
 since10                                  = addon.getSetting('since10') == 'true'
 sinceAll                                  = addon.getSetting('sinceAll') == 'true'
 Userspecial                           = addon.getSetting('Userspecial') == 'true'
+lollywood							= addon.getSetting('lollywood') == 'true'
 enableINPUTSTREAM         = addon.getSetting('useInputstream') == 'true'
 prefSTREAM                         = addon.getSetting('prefer_stream')
 SORTING                              = addon.getSetting('sorting_technique')
