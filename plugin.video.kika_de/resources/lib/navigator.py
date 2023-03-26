@@ -5,10 +5,8 @@ import re
 import xbmc
 import xbmcgui
 import xbmcplugin
-import json
-import xbmcvfs
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 PY2 = sys.version_info[0] == 2
 if PY2:
 	from urllib import urlencode  # Python 2.X
@@ -22,16 +20,16 @@ from .common import *
 
 
 def mainMenu():
-	if Newest: addDir(translation(30601), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=appearDate&orderDirection=desc', 'extras': json.dumps({'pager': False})})
-	if Mostviewed: addDir(translation(30602), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=viewCount&orderDirection=desc', 'extras': json.dumps({'pager': False})})
-	if Lastchance: addDir(translation(30603), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=expirationDate&orderDirection=asc', 'extras': json.dumps({'pager': False})})
+	if Newest: addDir(translation(30601), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=appearDate&orderDirection=desc', 'extras': 'nopager'})
+	if Mostviewed: addDir(translation(30602), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=viewCount&orderDirection=desc', 'extras': 'nopager'})
+	if Lastchance: addDir(translation(30603), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=expirationDate&orderDirection=asc', 'extras': 'nopager'})
 	if kikaninchen: 
 		addDir(translation(30604), icon, {'mode': 'listEpisodes', 'url': '/api/brands/ebb32e6f-511f-450d-9519-5cbf50d4b546/videos'})
 		addDir(translation(30605), icon, {'mode': 'listEpisodes', 'url': '/api/brands/9ed5cf37-2e09-4074-9935-f51ae06e45b1/videos', 'transmit': 'Kikaninchen und Freunde'})
 	if sesamstrasse: addDir(translation(30606), icon, {'mode': 'listEpisodes', 'url': '/api/brands/3e3e70b3-62a2-40cb-856d-a46d3e210e9c/videos', 'transmit': 'Sesamstrasse'})
-	if since03: addDir(translation(30607), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc', 'extras': json.dumps({'since': 3})})
-	if since06: addDir(translation(30608), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc', 'extras': json.dumps({'since': 6})})
-	if since10: addDir(translation(30609), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc', 'extras': json.dumps({'since': 10})})
+	if since03: addDir(translation(30607), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc&userAge=3'})
+	if since06: addDir(translation(30608), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc&userAge=6'})
+	if since10: addDir(translation(30609), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc&userAge=10'})
 	if sinceAll: addDir(translation(30610), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc'})
 	if Userspecial:
 		addDir(translation(30611), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&videoTypes=dgsContent'})
@@ -49,17 +47,13 @@ def listAlphabet(url, EXTRA):
 	debug_MS("(navigator.listAlphabet) ------------------------------------------------ START = listAlphabet -----------------------------------------------")
 	debug_MS("(navigator.listAlphabet) ### URL : {0} ### EXTRA : {1} ###".format(url, EXTRA))
 	content = { '_links': { 'next': { 'href': url } } }
-	extras = json.loads(EXTRA) if EXTRA else {}
-	target_group = 0
-	if 'since' in extras:
-		target_group = extras['since']
 	while 'next' in content['_links']:
 		content = getUrl(BASE_API + content['_links']['next']['href'])
 		for item in content['_embedded']['items']:
-			if target_group > 0 and target_group < item['targetGroup']:
-				continue
 			addDir(item['title'], item['brandImageUrl'], params={'mode': 'listEpisodes', 'url': item['_links']['videos']['href']},
 				plot=item['description'], fanart=item['largeBackgroundImageUrl'])
+		if EXTRA == 'nopager':
+			break
 	xbmcplugin.endOfDirectory(ADDON_HANDLE)
 	if forceView:
 		xbmc.executebuiltin('Container.SetViewMode('+viewIDAlphabet+')')
@@ -70,7 +64,6 @@ def listEpisodes(url, EXTRA, TRANS):
 	COMBI_EPISODE, COMBI_THIRD, COMBI_FOURTH = ([] for _ in range(3))
 	SingleENTRY = set()
 	pos1 = 0
-	extras = json.loads(EXTRA) if EXTRA else {}
 	content = { '_links': { 'next': { 'href': url } } }
 	while 'next' in content['_links']:
 		content = getUrl(BASE_API + content['_links']['next']['href'])
@@ -110,7 +103,7 @@ def listEpisodes(url, EXTRA, TRANS):
 			DURATION_1 = (item.get('duration', 0) or 0)
 			pos1 += 1
 			COMBI_EPISODE.append([int(pos1), JSURL_1, STUDIO_1, TITLE_1, SERIE_1, SEAS_1, EPIS_1, THUMB_1, DESC_1, TAGLINE_2, DURATION_1, canPLAY_1])
-		if 'pager' in extras and not extras['pager']:
+		if EXTRA == 'nopager':
 			break
 
 	if COMBI_EPISODE or (COMBI_FOURTH and COMBI_THIRD) or (not COMBI_FOURTH and COMBI_THIRD):

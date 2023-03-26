@@ -217,5 +217,5 @@ def parameters_string_to_dict(parameters):
 params = parameters_string_to_dict(sys.argv[2])
 url = unquote_plus(params.get('url', ''))
 mode = unquote_plus(params.get('mode', 'root'))
-extras  = unquote_plus(params.get('extras', '{}'))
+extras  = unquote_plus(params.get('extras', 'DEFAULT'))
 transmit = unquote_plus(params.get('transmit', 'unknown'))
