@@ -24,10 +24,14 @@ def mainMenu():
 	if Mostviewed: addDir(translation(30602), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=viewCount&orderDirection=desc', 'extras': 'nopager'})
 	if Lastchance: addDir(translation(30603), icon, {'mode': 'listEpisodes', 'url': '/api/videos?offset=0&limit=100&orderBy=expirationDate&orderDirection=asc', 'extras': 'nopager'})
 	if kikaninchen: 
-		addDir(translation(30604), icon, {'mode': 'listEpisodes', 'url': '/api/brands/ebb32e6f-511f-450d-9519-5cbf50d4b546/videos'})
-		addDir(translation(30605), icon, {'mode': 'listEpisodes', 'url': '/api/brands/9ed5cf37-2e09-4074-9935-f51ae06e45b1/videos', 'transmit': 'Kikaninchen und Freunde'})
-	if sesamstrasse: addDir(translation(30606), icon, {'mode': 'listEpisodes', 'url': '/api/brands/3e3e70b3-62a2-40cb-856d-a46d3e210e9c/videos', 'transmit': 'Sesamstrasse'})
-	if lollywood: addDir(translation(30616), icon, {'mode': 'listEpisodes', 'url': '/api/brands/a4b0918c-0d21-4160-afb0-2dc789534a8e/videos', 'transmit': 'Lollywood'})
+		addDir(translation(30604), 'https://www.kika.de/kikaninchen/sendungen/bilder/kikaninchen-teaserbild-100-resimage_v-ident_w-832.jpg',
+	 		{'mode': 'listEpisodes', 'url': '/api/brands/ebb32e6f-511f-450d-9519-5cbf50d4b546/videos'})
+		addDir(translation(30605), 'https://www.kika.de/kikaninchen-und-freunde/bilder/kikaninchen-und-freunde-weihnachten-teaser-100-resimage_v-ident_w-832.jpg',
+	 		{'mode': 'listEpisodes', 'url': '/api/brands/9ed5cf37-2e09-4074-9935-f51ae06e45b1/videos', 'transmit': 'Kikaninchen und Freunde'})
+	if sesamstrasse: addDir(translation(30606), 'https://www.kika.de/sesamstrasse/sendungen/bilder/sesamstrasse-teaser-100-resimage_v-ident_w-832.jpg',
+		{'mode': 'listEpisodes', 'url': '/api/brands/3e3e70b3-62a2-40cb-856d-a46d3e210e9c/videos', 'transmit': 'Sesamstrasse'})
+	if lollywood: addDir(translation(30616), 'https://www.kika.de/filme/bilder/filme-bei-kika-teaser-100-resimage_v-ident_w-832.jpg',
+		{'mode': 'listEpisodes', 'url': '/api/brands/a4b0918c-0d21-4160-afb0-2dc789534a8e/videos', 'transmit': 'Lollywood'})
 	if since03: addDir(translation(30607), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc&userAge=3'})
 	if since06: addDir(translation(30608), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc&userAge=6'})
 	if since10: addDir(translation(30609), icon, {'mode': 'listAlphabet', 'url': '/api/brands?offset=0&limit=100&orderBy=title&orderDirection=asc&userAge=10'})
