@@ -244,7 +244,7 @@ def addDir(name, image, params={}, plot=None, seriesname=None, folder=True, fana
 	u = '{0}?{1}'.format(HOST_AND_PATH, urlencode(params))
 	liz = xbmcgui.ListItem(name)
 	liz.setInfo(type='Video', infoLabels={'Title': name, 'Tvshowtitle': seriesname, 'Plot': plot})
-	liz.setArt({'icon': icon, 'thumb': image, 'poster': image, 'fanart': defaultFanart})
+	liz.setArt({'icon': icon, 'thumb': image, 'poster': image, 'fanart': fanart if fanart else defaultFanart})
 	if image and useThumbAsFanart and image != icon and not artpic in image:
 		liz.setArt({'fanart': fanart if fanart else image})
 	return xbmcplugin.addDirectoryItem(handle=ADDON_HANDLE, url=u, listitem=liz, isFolder=folder)
